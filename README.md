@@ -33,5 +33,7 @@ The back-end can be thrown out and easily swapped to use a cloud-based API on to
 The current popular ecosystem of NPM dependency management has become very complex and prone to breakage <sup id="a1">[1](#f1)</sup> <sup id="a2">[2](#f2)</sup> <sup id="a3">[3](#f3)</sup>. This project is intended as proof that modern web experiences are possible with minimal JS library usage and a non-existent web content build pipeline. The performance and simplicity of [vanilla js](http://vanilla-js.com/) is often overlooked in light of perceived convienences afforded by various libraries. 
 
 <b id="f1">1</b> [Visual Studio Code Breaks NPM](https://adtmag.com/articles/2016/11/03/vscode-rollback.aspx) [↩](#a1)
+
 <b id="f2">2</b> [Left-Pad removal from NPM breaks everything](http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm) [↩](#a2)
+
 <b id="f3">3</b> [Windows node_modules path length issue](https://github.com/nodejs/node-v0.x-archive/issues/6960) [↩](#a3)
