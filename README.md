@@ -30,7 +30,7 @@ This project as-is would be suitable for small to medium-sized web applications 
 The back-end can be thrown out and easily swapped to use a cloud-based API on top of AWS or similar platforms. All that you need to do is serve the contents of `/WebContent` out of a CDN (S3, et. al.) and point the URL inside `endpoint.js` at whatever backend provides the API.
 
 ### Motivation
-The current popular ecosystem of NPM dependency management has become very complex and prone to breakage <sup id="a1">[1](#f1)</sup> <sup id="a2">[2](#f2)</sup> <sup id="a3">[3](#f3)</sup>. This project is intended as proof that modern web experiences are possible with minimal JS library usage and a non-existent web content build pipeline. The performance and simplicity of [vanilla js](http://vanilla-js.com/) is often overlooked in light of perceived convienences afforded by various libraries. 
+The current popular ecosystem of NPM dependency management has become very complex and prone to breakage <sup id="a1">[1](#f1)</sup> <sup id="a2">[2](#f2)</sup> <sup id="a3">[3](#f3)</sup>. This project is intended as proof that modern web experiences are possible with minimal JS library usage and a non-existent web content build pipeline. The performance and simplicity of [vanilla js](http://vanilla-js.com/) is often overlooked in light of perceived conveniences afforded by various libraries. 
 
 <b id="f1">1</b> [Visual Studio Code Breaks NPM](https://adtmag.com/articles/2016/11/03/vscode-rollback.aspx) [↩](#a1)
 
