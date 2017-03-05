@@ -1,17 +1,17 @@
-using System;
+﻿using System;
 
 namespace NancyApplication.Model
 {
-    public class Post
+    public class Comment
     {
         public Int64 Id { get; set; }
-  
+
         public User User { get; set; }
 
-        public int Approves { get; set; }
+        public Post ParentPost { get; set; }
 
-        public int Disapproves { get; set; }
- 
+        public Comment ParentComment { get; set; }
+
         public string Content { get; set; }
     }
 }

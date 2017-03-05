@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using Nancy;
 using Nancy.Conventions;
 
@@ -34,14 +32,6 @@ namespace NancyApplication
                 StaticContentConventionBuilder.AddDirectory("/", 
                     "WebContent", AllowedExtensions)
             );
-        }
-    }
-
-    internal class CustomRootPathProvider : IRootPathProvider
-    {
-        public string GetRootPath()
-        {
-            return Directory.GetCurrentDirectory();
         }
     }
 }

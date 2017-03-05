@@ -4,17 +4,18 @@ using Microsoft.EntityFrameworkCore;
 using NancyApplication.Model;
 using NancyApplication.Services;
 using Nancy.ModelBinding;
+using NancyApplication.Data;
 
-namespace NancyApplication
+namespace NancyApplication.Controllers
 {
     public class UserController : NancyModule
     {
-        private static readonly DbContextOptions<ModelContext> DbOptions;
+        private static readonly DbContextOptions<DataContext> DbOptions;
 
         static UserController()
         {
             //For the love of god need some DI in here lol
-            DbOptions = new DbContextOptionsBuilder<ModelContext>()
+            DbOptions = new DbContextOptionsBuilder<DataContext>()
                .UseInMemoryDatabase(databaseName: "UserDatabase")
                .Options;
         }
@@ -27,13 +28,13 @@ namespace NancyApplication
 
         private async Task<Response> AddUserAsync()
         {
-            //var user = this.Bind<User>();
+            var user = this.Bind<User>();
 
-            //using(var ctx = new ModelContext(DbOptions))
-            //{
-            //    var userService = new UserService(ctx);
-            //    await userService.AddAsync(user).ConfigureAwait(false);
-            //}
+            using (var ctx = new DataContext(DbOptions))
+            {
+                var userService = new UserService(ctx);
+                await userService.AddAsync(user).ConfigureAwait(false);
+            }
 
             return 200;
         }
@@ -42,13 +43,11 @@ namespace NancyApplication
 
         private async Task<Response> GetAllUsersAsync()
         {
-            return 200;
-            //using (var ctx = new ModelContext(DbOptions))
-            //{
-            //    // var userService = new UserService(ctx);
-            //    // return Response.AsJson(userService.GetAll());
-                
-            //}
+            using (var ctx = new DataContext(DbOptions))
+            {
+                var userService = new UserService(ctx);
+                return Response.AsJson(userService.GetAll());
+            }
         }
     }
 }
